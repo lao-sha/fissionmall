@@ -229,4 +229,8 @@ mod runtime {
 	// Include the institution pallet in the runtime.
 	#[runtime::pallet_index(8)]
 	pub type Institution = pallet_institution;
+
+	// Include the institution freight template pallet in the runtime.
+	#[runtime::pallet_index(9)]
+	pub type InstitutionFreightTemplate = pallet_institution_freight_template;
 }

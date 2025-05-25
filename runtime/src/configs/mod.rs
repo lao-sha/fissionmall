@@ -40,7 +40,7 @@ use sp_version::RuntimeVersion;
 
 // Local module imports
 use super::{
-	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, Nonce, PalletInfo, Runtime,
+	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, InstitutionFreightTemplate, Nonce, PalletInfo, Runtime,
 	RuntimeCall, RuntimeEvent, RuntimeFreezeReason, RuntimeHoldReason, RuntimeOrigin, RuntimeTask,
 	System, EXISTENTIAL_DEPOSIT, SLOT_DURATION, VERSION,
 };
@@ -171,4 +171,10 @@ impl pallet_institution::Config for Runtime {
 	type MaxResponsiblePersonLength = ConstU32<128>;
 	type MaxBusinessScopeLength = ConstU32<512>;
 	type MaxContractLength = ConstU32<1024>;
+}
+
+/// Configure the pallet-institution-freight-template in pallets/institution-freight-template.
+impl pallet_institution_freight_template::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxCustomAreaLength = ConstU32<128>;
 }
