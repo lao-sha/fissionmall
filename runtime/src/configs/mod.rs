@@ -40,7 +40,7 @@ use sp_version::RuntimeVersion;
 
 // Local module imports
 use super::{
-	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Nonce, PalletInfo, Runtime,
+	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, Nonce, PalletInfo, Runtime,
 	RuntimeCall, RuntimeEvent, RuntimeFreezeReason, RuntimeHoldReason, RuntimeOrigin, RuntimeTask,
 	System, EXISTENTIAL_DEPOSIT, SLOT_DURATION, VERSION,
 };
@@ -161,4 +161,14 @@ impl pallet_sudo::Config for Runtime {
 impl pallet_template::Config for Runtime {
 	type RuntimeEvent = RuntimeEvent;
 	type WeightInfo = pallet_template::weights::SubstrateWeight<Runtime>;
+}
+
+/// Configure the pallet-institution in pallets/institution.
+impl pallet_institution::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxInstitutionIdLength = ConstU32<64>;
+	type MaxNameLength = ConstU32<256>;
+	type MaxResponsiblePersonLength = ConstU32<128>;
+	type MaxBusinessScopeLength = ConstU32<512>;
+	type MaxContractLength = ConstU32<1024>;
 }
