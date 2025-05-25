@@ -233,4 +233,8 @@ mod runtime {
 	// Include the institution freight template pallet in the runtime.
 	#[runtime::pallet_index(9)]
 	pub type InstitutionFreightTemplate = pallet_institution_freight_template;
+
+	// Include the institution payment method pallet in the runtime.
+	#[runtime::pallet_index(10)]
+	pub type InstitutionPaymentMethod = pallet_institution_payment_method;
 }

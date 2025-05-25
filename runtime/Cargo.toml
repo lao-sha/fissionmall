@@ -27,6 +27,7 @@ pallet-balances.workspace = true
 pallet-grandpa.workspace = true
 pallet-institution = { path = "../pallets/institution", default-features = false }
 pallet-institution-freight-template = { path = "../pallets/institution-freight-template", default-features = false }
+pallet-institution-payment-method = { path = "../pallets/institution-payment-method", default-features = false }
 pallet-sudo.workspace = true
 pallet-template.workspace = true
 pallet-timestamp.workspace = true
@@ -69,6 +70,7 @@ std = [
 	"pallet-grandpa/std",
 	"pallet-institution/std",
 	"pallet-institution-freight-template/std",
+	"pallet-institution-payment-method/std",
 	"pallet-sudo/std",
 	"pallet-template/std",
 	"pallet-timestamp/std",
@@ -102,6 +104,7 @@ runtime-benchmarks = [
 	"pallet-grandpa/runtime-benchmarks",
 	"pallet-institution/runtime-benchmarks",
 	"pallet-institution-freight-template/runtime-benchmarks",
+	"pallet-institution-payment-method/runtime-benchmarks",
 	"pallet-sudo/runtime-benchmarks",
 	"pallet-template/runtime-benchmarks",
 	"pallet-timestamp/runtime-benchmarks",
@@ -119,6 +122,7 @@ try-runtime = [
 	"pallet-grandpa/try-runtime",
 	"pallet-institution/try-runtime",
 	"pallet-institution-freight-template/try-runtime",
+	"pallet-institution-payment-method/try-runtime",
 	"pallet-sudo/try-runtime",
 	"pallet-template/try-runtime",
 	"pallet-timestamp/try-runtime",
