@@ -40,7 +40,7 @@ use sp_version::RuntimeVersion;
 
 // Local module imports
 use super::{
-	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, InstitutionFreightTemplate, InstitutionPaymentMethod, Nonce, PalletInfo, Runtime,
+	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, InstitutionFreightTemplate, InstitutionPaymentMethod, Order, Nonce, PalletInfo, Runtime,
 	RuntimeCall, RuntimeEvent, RuntimeFreezeReason, RuntimeHoldReason, RuntimeOrigin, RuntimeTask,
 	System, EXISTENTIAL_DEPOSIT, SLOT_DURATION, VERSION,
 };
@@ -184,4 +184,15 @@ impl pallet_institution_payment_method::Config for Runtime {
 	type RuntimeEvent = RuntimeEvent;
 	type MaxInstitutionIdLength = ConstU32<64>;
 	type MaxPaymentLength = ConstU32<256>;
+}
+
+/// Configure the pallet-order in pallets/order.
+impl pallet_order::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxOrderCodeLength = ConstU32<64>;
+	type MaxMemberCodeLength = ConstU32<64>;
+	type MaxInstitutionIdLength = ConstU32<64>;
+	type MaxOrderItems = ConstU32<100>;
+	type MaxExpressCompanyLength = ConstU32<128>;
+	type MaxExpressNumberLength = ConstU32<128>;
 }

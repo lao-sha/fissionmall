@@ -237,4 +237,8 @@ mod runtime {
 	// Include the institution payment method pallet in the runtime.
 	#[runtime::pallet_index(10)]
 	pub type InstitutionPaymentMethod = pallet_institution_payment_method;
+
+	// Include the order pallet in the runtime.
+	#[runtime::pallet_index(11)]
+	pub type Order = pallet_order;
 }
