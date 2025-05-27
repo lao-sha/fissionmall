@@ -40,7 +40,7 @@ use sp_version::RuntimeVersion;
 
 // Local module imports
 use super::{
-	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, InstitutionFreightTemplate, InstitutionPaymentMethod, Order, Nonce, PalletInfo, Runtime,
+	AccountId, Aura, Balance, Balances, Block, BlockNumber, Hash, Institution, InstitutionFreightTemplate, InstitutionPaymentMethod, Order, Product, C2cToken, C2cOrder, Nonce, PalletInfo, Runtime,
 	RuntimeCall, RuntimeEvent, RuntimeFreezeReason, RuntimeHoldReason, RuntimeOrigin, RuntimeTask,
 	System, EXISTENTIAL_DEPOSIT, SLOT_DURATION, VERSION,
 };
@@ -195,4 +195,36 @@ impl pallet_order::Config for Runtime {
 	type MaxOrderItems = ConstU32<100>;
 	type MaxExpressCompanyLength = ConstU32<128>;
 	type MaxExpressNumberLength = ConstU32<128>;
+}
+
+/// Configure the pallet-product in pallets/product.
+impl pallet_product::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxProductCodeLength = ConstU32<64>;
+	type MaxInstitutionCodeLength = ConstU32<64>;
+	type MaxNameLength = ConstU32<256>;
+	type MaxCategoryLength = ConstU32<128>;
+	type MaxBrandLength = ConstU32<128>;
+	type MaxAuthorizedMemberGroup = ConstU32<128>;
+	type MaxAuthorizedGroups = ConstU32<10>;
+	type MaxDescriptionLength = ConstU32<1024>;
+	type MaxImageUrlLength = ConstU32<512>;
+	type MaxDetailImages = ConstU32<10>;
+}
+
+/// Configure the pallet-c2c-token in pallets/c2c-token.
+impl pallet_c2c_token::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxTokenCodeLength = ConstU32<64>;
+	type MaxInstitutionCodeLength = ConstU32<64>;
+	type MaxNameLength = ConstU32<256>;
+	type MaxCategoryLength = ConstU32<128>;
+}
+
+/// Configure the pallet-c2c-order in pallets/c2c-order.
+impl pallet_c2c_order::Config for Runtime {
+	type RuntimeEvent = RuntimeEvent;
+	type MaxOrderCodeLength = ConstU32<64>;
+	type MaxMemberCodeLength = ConstU32<64>;
+	type MaxInstitutionIdLength = ConstU32<64>;
 }

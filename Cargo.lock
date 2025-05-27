@@ -5883,6 +5883,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "pallet-c2c-order"
+version = "0.1.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-c2c-token"
+version = "0.1.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
 name = "pallet-grandpa"
 version = "40.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5952,6 +5982,21 @@ dependencies = [
 
 [[package]]
 name = "pallet-order"
+version = "0.1.0"
+dependencies = [
+ "frame-benchmarking",
+ "frame-support",
+ "frame-system",
+ "parity-scale-codec",
+ "scale-info",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+]
+
+[[package]]
+name = "pallet-product"
 version = "0.1.0"
 dependencies = [
  "frame-benchmarking",
@@ -9530,11 +9575,14 @@ dependencies = [
  "frame-try-runtime",
  "pallet-aura",
  "pallet-balances",
+ "pallet-c2c-order",
+ "pallet-c2c-token",
  "pallet-grandpa",
  "pallet-institution",
  "pallet-institution-freight-template",
  "pallet-institution-payment-method",
  "pallet-order",
+ "pallet-product",
  "pallet-sudo",
  "pallet-template",
  "pallet-timestamp",

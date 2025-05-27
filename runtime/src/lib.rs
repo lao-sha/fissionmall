@@ -241,4 +241,16 @@ mod runtime {
 	// Include the order pallet in the runtime.
 	#[runtime::pallet_index(11)]
 	pub type Order = pallet_order;
+
+	// Include the product pallet in the runtime.
+	#[runtime::pallet_index(12)]
+	pub type Product = pallet_product;
+
+	// Include the c2c-token pallet in the runtime.
+	#[runtime::pallet_index(13)]
+	pub type C2cToken = pallet_c2c_token;
+
+	// Include the c2c-order pallet in the runtime.
+	#[runtime::pallet_index(14)]
+	pub type C2cOrder = pallet_c2c_order;
 }
